@@ -2,125 +2,194 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>G6 過去ライブ年表</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G6（ジーシックス） - GLAY Copy Band</title>
+
 <style>
-body { background:#111; color:#fff; font-family:sans-serif; margin:0; }
+  body {
+    background: url("images/トップページ/HP背景.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: "Noto Sans JP", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 
-/* ▼▼ タイトルロゴ画像 ▼▼ */
-header {
-  background:#000;
-  text-align:center;
-  padding:0;
-}
-header img {
-  width:100%;
-  max-width:1000px; /* ← 年表ページはこのままでOK */
-  height:auto;
-  display:block;
-  margin:0 auto;
-}
-/* ▲▲ タイトルロゴここまで ▲▲ */
+  .header {
+    text-align: center;
+    padding: 20px 0;
+  }
 
-.section { max-width:800px; margin:auto; padding:30px; }
-.live-item { background:#222; padding:20px; margin-bottom:25px; border-left:5px solid #e60033; }
-.live-item a { color:#66aaff; text-decoration:underline; }
-.year-title { font-size:28px; margin-bottom:10px; font-weight:bold; }
+  /* ✅ タイトル画像 60%（2000px → 1200px） */
+  .header img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+  }
 
-/* トップページに戻るリンク */
-.top-link {
-  text-align:center;
-  margin:20px 0;
-  font-size:18px;
-}
+  .main-layout {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    position: relative;
+  }
 
-/* ページ下部の「上へ戻る」ボタン */
-#scrollTopBtn {
-  display:none;
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  z-index:99;
-  font-size:18px;
-  border:none;
-  outline:none;
-  background-color:#66aaff;
-  color:#fff;
-  cursor:pointer;
-  padding:12px 18px;
-  border-radius:5px;
-  transition:0.3s;
-}
-#scrollTopBtn:hover {
-  background-color:#1e90ff;
-}
+  .side-members {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+
+  .side-members img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
+  }
+
+  .content-wrapper {
+    width: 90%;
+    max-width: 900px;
+  }
+
+  .live-block {
+    background: rgba(0,0,0,0.45);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px 0;
+  }
+
+  .summary-block {
+    background: rgba(0,0,0,0.75);
+  }
+
+  .live-item {
+    border-left: 5px solid #ff3b3b;
+    padding-left: 10px;
+    margin-bottom: 30px;
+  }
+
+  .year-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .live-img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+
+  .link-mail {
+    color: #3a7fcc;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
+
+  .link-youtube {
+    color: #cc3333;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
+
+  .link-past {
+    color: #4caf50;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
 </style>
 </head>
 
 <body>
 
-<!-- ▼▼ タイトルロゴ画像 ▼▼ -->
-<header id="top">
-  <img src="images/トップページ/タイトル.png" alt="G6ロゴ">
-</header>
-<!-- ▲▲ タイトルロゴここまで ▲▲ -->
-
-<p style="text-align:center; color:#fff;">
-  クリックで動画に飛べます
-</p>
-
-<section class="section">
-
-  <!-- 2026 -->
-  <div class="live-item">
-    <div class="year-title">2026年</div>
-    <p>● <a href="https://youtu.be/dxwhCAeRNzI?si=g_YccxywLtajEESA" target="_blank">
-        2026 COPYBAND SPRING LIVE（2026/04/25）
-      </a></p>
-    <p>● <a href="https://youtu.be/Zvqbu26_H6Q?si=7frKVFHuM-zPRWly" target="_blank">
-        第3回小岩ロックフェスティバル（2026/01/25）
-      </a></p>
-  </div>
-
-  <!-- 2025 -->
-  <div class="live-item">
-    <div class="year-title">2025年</div>
-  </div>
-
-  <!-- 2024 -->
-  <div class="live-item">
-    <div class="year-title">2024年</div>
-    <p>● <a href="https://youtu.be/RY0Pm5aAM40?si=IPyX20gVrHP6I1ph" target="_blank">
-        小岩ロックフェスティバル（2024/08/04）
-      </a></p>
-  </div>
-
-</section>
-
-<!-- トップページに戻るリンク -->
-<div class="top-link">
-  <a href="トップ.html" style="color:#66aaff; text-decoration:underline;">
-    ▲ トップページに戻る
-  </a>
+<div class="header">
+  <img src="images/トップページ/タイトル.png" alt="G6タイトルロゴ">
 </div>
 
-<!-- スクロール時に表示されるボタン -->
-<button onclick="scrollToTop()" id="scrollTopBtn">▲ 上へ戻る</button>
+<div class="main-layout">
+
+  <div class="side-members" id="leftMembers">
+    <img src="images/トップページ/関口.jpg">
+    <img src="images/トップページ/山下.jpg">
+    <img src="images/トップページ/和也.jpg">
+  </div>
+
+  <div class="content-wrapper">
+
+    <div class="live-block">
+      <div class="live-item">
+        <div class="year-title">2026年</div>
+        <p>● 第4回 小岩ロックフェスティバル（2026.12.06）</p>
+        <img src="images/2026/2026.12.06.jpg" class="live-img">
+      </div>
+    </div>
+
+    <div class="live-block">
+      <div class="live-item">
+        <div class="year-title">2027年</div>
+        <p>● 2027.3月　G6主催コピバンイベント開催予定<br>@小岩オルフェウス<br>----出演バンド募集中----</p>
+      </div>
+    </div>
+
+    <div class="live-block summary-block">
+      <div class="live-item">
+        <p>お問い合わせ：
+          <a href="mailto:g6.glaycopyband@gmail.com" class="link-mail">
+            g6.glaycopyband@gmail.com
+          </a>
+        </p>
+
+        <p>YouTube：
+          <a href="https://www.youtube.com/@takuya4957" target="_blank" class="link-youtube">
+            G6 Official Channel
+          </a>
+        </p>
+
+        <p>
+          <a href="ライブ年表.html" class="link-past">
+            ▶ 過去ライブはこちら
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="side-members" id="rightMembers">
+    <img src="images/トップページ/西岡.jpg">
+    <img src="images/トップページ/辻.jpg">
+    <img src="images/トップページ/秋元.jpg">
+  </div>
+
+</div>
 
 <script>
-// スクロールでボタン表示
-window.onscroll = function() {
-  const btn = document.getElementById("scrollTopBtn");
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-};
+  const firstBlock = document.querySelector(".live-block");
+  const topPos = firstBlock.offsetTop;
 
-// 上へ戻る動作
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+  document.getElementById("leftMembers").style.top = topPos + "px";
+  document.getElementById("rightMembers").style.top = topPos + "px";
 </script>
 
 </body>
