@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G6（ジーシックス） - GLAY Copy Band</title>
+
+<style>
+  body {
+    background: url("images/トップページ/HP背景.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: "Noto Sans JP", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  /* ✅ タイトル画像 60%（2000px → 1200px） */
+  .header img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+  }
+
+  .main-layout {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .side-members {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+
+  .side-members img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
+  }
+
+  .content-wrapper {
+    width: 90%;
+    max-width: 900px;
+  }
+
+  .live-block {
+    background: rgba(0,0,0,0.45);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px 0;
+  }
+
+  .summary-block {
+    background: rgba(0,0,0,0.75);
+  }
+
+  .live-item {
+    border-left: 5px solid #ff3b3b;
+    padding-left: 10px;
+    margin-bottom: 30px;
+  }
+
+  .year-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .live-img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+
+  .link-mail {
+    color: #3a7fcc;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
+
+  .link-youtube {
+    color: #cc3333;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
+
+  .link-past {
+    color: #4caf50;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="images/トップページ/タイトル.png" alt="G6タイトルロゴ">
+</div>
+
+<div class="main-layout">
+
+  <div class="side-members" id="leftMembers">
+    <img src="images/トップページ/関口.jpg">
+    <img src="images/トップページ/山下.jpg">
+    <img src="images/トップページ/和也.jpg">
+  </div>
+
+  <div class="content-wrapper">
+
+    <div class="live-block">
+      <div class="live-item">
+        <div class="year-title">2026年</div>
+        <p>● 第4回 小岩ロックフェスティバル（2026.12.06）</p>
+        <img src="images/2026/2026.12.06.jpg" class="live-img">
+      </div>
+    </div>
+
+    <div class="live-block">
+      <div class="live-item">
+        <div class="year-title">2027年</div>
+        <p>● 2027.3月　G6主催コピバンイベント開催予定<br>出演バンド募集中</p>
+      </div>
+    </div>
+
+    <div class="live-block summary-block">
+      <div class="live-item">
+        <p>お問い合わせ：
+          <a href="mailto:g6.glaycopyband@gmail.com" class="link-mail">
+            g6.glaycopyband@gmail.com
+          </a>
+        </p>
+
+        <p>YouTube：
+          <a href="https://www.youtube.com/@takuya4957" target="_blank" class="link-youtube">
+            G6 Official Channel
+          </a>
+        </p>
+
+        <p>
+          <a href="ライブ年表.html" class="link-past">
+            ▶ 過去ライブはこちら
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="side-members" id="rightMembers">
+    <img src="images/トップページ/西岡.jpg">
+    <img src="images/トップページ/辻.jpg">
+    <img src="images/トップページ/秋元.jpg">
+  </div>
+
+</div>
+
+<script>
+  const firstBlock = document.querySelector(".live-block");
+  const topPos = firstBlock.offsetTop;
+
+  document.getElementById("leftMembers").style.top = topPos + "px";
+  document.getElementById("rightMembers").style.top = topPos + "px";
+</script>
+
+</body>
+</html>
