@@ -26,6 +26,7 @@
     height: auto;
   }
 
+  /* ▼ PC用：左右3人ずつ */
   .main-layout {
     display: flex;
     justify-content: center;
@@ -119,6 +120,11 @@
       -1px -1px 0 #fff;
   }
 
+  /* ▼ PCではスマホ用ブロックを非表示 */
+  .mobile-members {
+    display: none;
+  }
+
   /* ▼ スマホ専用レイアウト（横並び6人） */
   @media (max-width: 768px) {
 
@@ -130,10 +136,10 @@
 
     /* スマホ用メンバー表示（中央ブロックと同じ幅） */
     .mobile-members {
+      display: flex;
       width: 90%;
       max-width: 900px;
       margin: 0 auto;
-      display: flex;
       overflow-x: auto;
       gap: 12px;
       padding: 10px 0;
@@ -226,11 +232,12 @@
 </div>
 
 <script>
+  /* PC用：左右の画像位置をタイトル下に揃える */
   window.onload = function() {
-    const firstBlock = document.querySelector(".live-block");
-    const topPos = firstBlock.offsetTop;
-    document.getElementById("leftMembers").style.top = topPos + "px";
-    document.getElementById("rightMembers").style.top = topPos + "px";
+    const header = document.querySelector(".header");
+    const headerBottom = header.offsetHeight;
+    document.getElementById("leftMembers").style.top = headerBottom + 20 + "px";
+    document.getElementById("rightMembers").style.top = headerBottom + 20 + "px";
   };
 </script>
 
