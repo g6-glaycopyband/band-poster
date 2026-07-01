@@ -51,6 +51,7 @@
   .content-wrapper {
     width: 90%;
     max-width: 900px;
+    margin: 0 auto;
   }
 
   .live-block {
@@ -117,6 +118,34 @@
       1px -1px 0 #fff,
       -1px -1px 0 #fff;
   }
+
+  /* ▼ スマホ専用レイアウト（横並び6人） */
+  @media (max-width: 768px) {
+
+    /* PCの左右メンバーを非表示 */
+    #leftMembers,
+    #rightMembers {
+      display: none;
+    }
+
+    /* スマホ用メンバー表示（中央ブロックと同じ幅） */
+    .mobile-members {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 10px 0;
+    }
+
+    .mobile-members img {
+      width: 30%;
+      min-width: 120px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+  }
 </style>
 </head>
 
@@ -126,14 +155,26 @@
   <img src="images/top/title.png" alt="G6タイトルロゴ">
 </div>
 
+<!-- ▼ スマホ専用：6人横並び（指定順） -->
+<div class="mobile-members">
+  <img src="images/top/kazuya.jpg">
+  <img src="images/top/yamashita.jpg">
+  <img src="images/top/sekiguchi.jpg">
+  <img src="images/top/akimoto.jpg">
+  <img src="images/top/nishioka.jpg">
+  <img src="images/top/tsuji.jpg">
+</div>
+
 <div class="main-layout">
 
+  <!-- PC左側 -->
   <div class="side-members" id="leftMembers">
     <img src="images/top/sekiguchi.jpg">
     <img src="images/top/yamashita.jpg">
     <img src="images/top/kazuya.jpg">
   </div>
 
+  <!-- 中央コンテンツ -->
   <div class="content-wrapper">
 
     <div class="live-block">
@@ -175,6 +216,7 @@
 
   </div>
 
+  <!-- PC右側 -->
   <div class="side-members" id="rightMembers">
     <img src="images/top/nishioka.jpg">
     <img src="images/top/tsuji.jpg">
