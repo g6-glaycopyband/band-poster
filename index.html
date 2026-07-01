@@ -26,13 +26,17 @@
     height: auto;
   }
 
-  /* ▼ PC用：左右3人ずつ（中央ブロックの外側に寄せる） */
+  /* ▼ PC用：中央ブロックの外側に寄せる */
   .main-layout {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* ← あなたが調整した距離を維持 */
-    margin-top: 20px;
     position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content-wrapper {
+    width: 900px;
+    margin: 0 auto;
   }
 
   .side-members {
@@ -40,19 +44,21 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: relative; /* ← 端に寄らない。中央ブロックの外側に寄せる */
+    position: absolute;
+  }
+
+  #leftMembers {
+    left: calc(50% - 900px / 2 - 260px - 40px);
+  }
+
+  #rightMembers {
+    right: calc(50% - 900px / 2 - 260px - 40px);
   }
 
   .side-members img {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 0 12px rgba(255,255,255,0.4);
-  }
-
-  .content-wrapper {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
   }
 
   .live-block {
@@ -82,6 +88,43 @@
     width: 100%;
     margin-top: 10px;
     border-radius: 6px;
+  }
+
+  /* ▼ 概要ブロックの文字色（白フチ復元） */
+  .link-mail {
+    color: #4da3ff;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
+
+  .link-youtube {
+    color: #ff0000;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
+
+  .link-past {
+    color: #4caf50;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
   }
 
   /* ▼ PCではスマホ用ブロックを非表示 */
@@ -123,7 +166,7 @@
   <img src="images/top/title.png" alt="G6タイトルロゴ">
 </div>
 
-<!-- ▼ スマホ専用：6人横並び（指定順） -->
+<!-- ▼ スマホ専用：6人横並び -->
 <div class="mobile-members">
   <img src="images/top/kazuya.jpg">
   <img src="images/top/yamashita.jpg">
@@ -135,16 +178,15 @@
 
 <div class="main-layout">
 
-  <!-- PC左側 -->
+  <!-- 左側 -->
   <div class="side-members" id="leftMembers">
     <img src="images/top/sekiguchi.jpg">
     <img src="images/top/yamashita.jpg">
     <img src="images/top/kazuya.jpg">
   </div>
 
-  <!-- 中央コンテンツ -->
+  <!-- 中央 -->
   <div class="content-wrapper">
-
     <div class="live-block">
       <div class="live-item">
         <div class="year-title">2026年</div>
@@ -167,13 +209,11 @@
             g6.glaycopyband@gmail.com
           </a>
         </p>
-
         <p>YouTube：
           <a href="https://www.youtube.com/@takuya4957" target="_blank" class="link-youtube">
             G6 Official Channel
           </a>
         </p>
-
         <p>
           <a href="live-history.html" class="link-past">
             ▶ ライブヒストリーはこちら
@@ -181,10 +221,9 @@
         </p>
       </div>
     </div>
-
   </div>
 
-  <!-- PC右側 -->
+  <!-- 右側 -->
   <div class="side-members" id="rightMembers">
     <img src="images/top/nishioka.jpg">
     <img src="images/top/tsuji.jpg">
@@ -194,7 +233,6 @@
 </div>
 
 <script>
-  /* ▼ PC用：ズームしても中央ブロックの上端に揃える（あなたが調整したやつ） */
   window.onload = function() {
     const firstBlock = document.querySelector(".live-block");
     const topPos = firstBlock.offsetTop;
