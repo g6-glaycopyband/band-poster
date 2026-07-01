@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: relative;
+    position: absolute;
   }
 
   .side-members img {
@@ -232,12 +232,12 @@
 </div>
 
 <script>
-  /* PC用：左右の画像位置をタイトル下に揃える */
+  /* PC用：左右の画像位置を中央ブロックの上端に揃える（元の仕様） */
   window.onload = function() {
-    const header = document.querySelector(".header");
-    const headerBottom = header.offsetHeight;
-    document.getElementById("leftMembers").style.top = headerBottom + 20 + "px";
-    document.getElementById("rightMembers").style.top = headerBottom + 20 + "px";
+    const firstBlock = document.querySelector(".live-block");
+    const topPos = firstBlock.offsetTop;
+    document.getElementById("leftMembers").style.top = topPos + "px";
+    document.getElementById("rightMembers").style.top = topPos + "px";
   };
 </script>
 
