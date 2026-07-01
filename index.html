@@ -132,7 +132,7 @@
     display: none;
   }
 
-  /* ▼ スマホ専用レイアウト（横並び6人）＋中央ブロック余白調整 */
+  /* ▼ スマホ専用レイアウト（横並び6人）＋中央ブロック幅調整＋余白調整 */
   @media (max-width: 768px) {
 
     #leftMembers,
@@ -157,9 +157,17 @@
       box-shadow: 0 0 10px rgba(255,255,255,0.4);
     }
 
-    /* ▼ スマホで中央ブロックの上余白を詰める（重要） */
+    /* ▼ スマホで中央ブロックの幅を画面に合わせる（重要） */
+    .content-wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ▼ スマホで中央ブロックの上余白を詰める */
     .live-block {
       margin-top: 20px;
+      padding: 16px;
     }
   }
 </style>
