@@ -132,7 +132,7 @@
     display: none;
   }
 
-  /* ▼ スマホ専用レイアウト（横並び6人）＋中央ブロック幅調整＋余白調整 */
+  /* ▼ スマホ専用レイアウト（3人 × 2段）＋中央ブロック幅調整 */
   @media (max-width: 768px) {
 
     #leftMembers,
@@ -141,30 +141,30 @@
     }
 
     .mobile-members {
-      display: flex;
       width: 90%;
       max-width: 900px;
       margin: 0 auto;
-      overflow-x: auto;
-      gap: 12px;
       padding: 10px 0;
     }
 
+    .mobile-members .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
     .mobile-members img {
-      width: 30%;
-      min-width: 120px;
+      width: 32%;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(255,255,255,0.4);
     }
 
-    /* ▼ スマホで中央ブロックの幅を画面に合わせる（重要） */
     .content-wrapper {
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
     }
 
-    /* ▼ スマホで中央ブロックの上余白を詰める */
     .live-block {
       margin-top: 20px;
       padding: 16px;
@@ -179,19 +179,28 @@
   <img src="images/top/title.png" alt="G6タイトルロゴ">
 </div>
 
-<!-- ▼ スマホ専用：6人横並び -->
+<!-- ▼ スマホ専用：3人 × 2段（並び順反映済み） -->
 <div class="mobile-members">
-  <img src="images/top/kazuya.jpg">
-  <img src="images/top/yamashita.jpg">
-  <img src="images/top/sekiguchi.jpg">
-  <img src="images/top/akimoto.jpg">
-  <img src="images/top/nishioka.jpg">
-  <img src="images/top/tsuji.jpg">
+
+  <!-- 上段：山下 → 関口 → 西岡 -->
+  <div class="row">
+    <img src="images/top/yamashita.jpg">
+    <img src="images/top/sekiguchi.jpg">
+    <img src="images/top/nishioka.jpg">
+  </div>
+
+  <!-- 下段：和也 → 秋元 → 辻 -->
+  <div class="row">
+    <img src="images/top/kazuya.jpg">
+    <img src="images/top/akimoto.jpg">
+    <img src="images/top/tsuji.jpg">
+  </div>
+
 </div>
 
 <div class="main-layout">
 
-  <!-- 左側 -->
+  <!-- 左側（PC用） -->
   <div class="side-members" id="leftMembers">
     <img src="images/top/sekiguchi.jpg">
     <img src="images/top/yamashita.jpg">
@@ -236,7 +245,7 @@
     </div>
   </div>
 
-  <!-- 右側 -->
+  <!-- 右側（PC用） -->
   <div class="side-members" id="rightMembers">
     <img src="images/top/nishioka.jpg">
     <img src="images/top/tsuji.jpg">
