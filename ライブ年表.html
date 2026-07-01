@@ -3,10 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>G6 過去ライブ年表</title>
-<style>
-body { background:#111; color:#fff; font-family:sans-serif; margin:0; }
 
-/* ▼▼ タイトルロゴ画像 ▼▼ */
+<style>
+body {
+  background:#111;
+  color:#fff;
+  font-family:"Noto Sans JP", sans-serif;
+  margin:0;
+}
+
+/* ▼ タイトルロゴ画像 ▼ */
 header {
   background:#000;
   text-align:center;
@@ -14,17 +20,35 @@ header {
 }
 header img {
   width:100%;
-  max-width:1000px; /* ← 年表ページはこのままでOK */
+  max-width:1000px;
   height:auto;
   display:block;
   margin:0 auto;
 }
-/* ▲▲ タイトルロゴここまで ▲▲ */
 
-.section { max-width:800px; margin:auto; padding:30px; }
-.live-item { background:#222; padding:20px; margin-bottom:25px; border-left:5px solid #e60033; }
-.live-item a { color:#66aaff; text-decoration:underline; }
-.year-title { font-size:28px; margin-bottom:10px; font-weight:bold; }
+.section {
+  max-width:800px;
+  margin:auto;
+  padding:30px;
+}
+
+.live-item {
+  background:#222;
+  padding:20px;
+  margin-bottom:25px;
+  border-left:5px solid #e60033;
+}
+
+.live-item a {
+  color:#66aaff;
+  text-decoration:underline;
+}
+
+.year-title {
+  font-size:28px;
+  margin-bottom:10px;
+  font-weight:bold;
+}
 
 /* トップページに戻るリンク */
 .top-link {
@@ -33,7 +57,7 @@ header img {
   font-size:18px;
 }
 
-/* ページ下部の「上へ戻る」ボタン */
+/* 上へ戻るボタン */
 #scrollTopBtn {
   display:none;
   position:fixed;
@@ -58,11 +82,9 @@ header img {
 
 <body>
 
-<!-- ▼▼ タイトルロゴ画像 ▼▼ -->
 <header id="top">
-  <img src="images/トップページ/タイトル.png" alt="G6ロゴ">
+  <img src="images/top/タイトル.png" alt="G6ロゴ">
 </header>
-<!-- ▲▲ タイトルロゴここまで ▲▲ -->
 
 <p style="text-align:center; color:#fff; font-size:24px;">
   クリックで動画に飛べます
@@ -73,12 +95,18 @@ header img {
   <!-- 2026 -->
   <div class="live-item">
     <div class="year-title">2026年</div>
-    <p>● <a href="https://youtu.be/dxwhCAeRNzI?si=g_YccxywLtajEESA" target="_blank">
+
+    <p>● 
+      <a href="https://youtu.be/dxwhCAeRNzI?si=g_YccxywLtajEESA" target="_blank">
         2026 COPYBAND SPRING LIVE（2026/04/25）
-      </a></p>
-    <p>● <a href="https://youtu.be/Zvqbu26_H6Q?si=7frKVFHuM-zPRWly" target="_blank">
+      </a>
+    </p>
+
+    <p>● 
+      <a href="https://youtu.be/Zvqbu26_H6Q?si=7frKVFHuM-zPRWly" target="_blank">
         第3回小岩ロックフェスティバル（2026/01/25）
-      </a></p>
+      </a>
+    </p>
   </div>
 
   <!-- 2025 -->
@@ -89,25 +117,25 @@ header img {
   <!-- 2024 -->
   <div class="live-item">
     <div class="year-title">2024年</div>
-    <p>● <a href="https://youtu.be/RY0Pm5aAM40?si=IPyX20gVrHP6I1ph" target="_blank">
+
+    <p>● 
+      <a href="https://youtu.be/RY0Pm5aAM40?si=IPyX20gVrHP6I1ph" target="_blank">
         小岩ロックフェスティバル（2024/08/04）
-      </a></p>
+      </a>
+    </p>
   </div>
 
 </section>
 
-<!-- トップページに戻るリンク -->
 <div class="top-link">
   <a href="index.html" style="color:#66aaff; text-decoration:underline;">
     ▲ トップページに戻る
   </a>
 </div>
 
-<!-- スクロール時に表示されるボタン -->
 <button onclick="scrollToTop()" id="scrollTopBtn">▲ 上へ戻る</button>
 
 <script>
-// スクロールでボタン表示
 window.onscroll = function() {
   const btn = document.getElementById("scrollTopBtn");
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -117,7 +145,6 @@ window.onscroll = function() {
   }
 };
 
-// 上へ戻る動作
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
