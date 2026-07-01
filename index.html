@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: absolute;
+    position: absolute; /* ← PCは絶対配置 */
   }
 
   .side-members img {
@@ -232,7 +232,7 @@
 </div>
 
 <script>
-  /* PC用：左右の画像位置を中央ブロックの上端に揃える（元の仕様） */
+  /* ▼ PC用：左右の画像位置を中央ブロックの上端に揃える（元の仕様） */
   window.onload = function() {
     const firstBlock = document.querySelector(".live-block");
     const topPos = firstBlock.offsetTop;
