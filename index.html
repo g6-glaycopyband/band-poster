@@ -7,7 +7,7 @@
 
 <style>
   body {
-    background: url("images/トップページ/HP背景.jpeg") no-repeat center center fixed;
+    background: url("images/top/HP背景.jpeg") no-repeat center center fixed;
     background-size: cover;
     color: #fff;
     font-family: "Noto Sans JP", sans-serif;
@@ -20,7 +20,6 @@
     padding: 20px 0;
   }
 
-  /* ✅ タイトル画像 60%（2000px → 1200px） */
   .header img {
     width: 100%;
     max-width: 1200px;
@@ -124,15 +123,15 @@
 <body>
 
 <div class="header">
-  <img src="images/トップページ/タイトル.png" alt="G6タイトルロゴ">
+  <img src="images/top/タイトル.png" alt="G6タイトルロゴ">
 </div>
 
 <div class="main-layout">
 
   <div class="side-members" id="leftMembers">
-    <img src="images/トップページ/関口.jpg">
-    <img src="images/トップページ/山下.jpg">
-    <img src="images/トップページ/和也.jpg">
+    <img src="images/top/関口.jpg">
+    <img src="images/top/山下.jpg">
+    <img src="images/top/和也.jpg">
   </div>
 
   <div class="content-wrapper">
@@ -148,7 +147,7 @@
     <div class="live-block">
       <div class="live-item">
         <div class="year-title">2027年</div>
-        <p>● 2027.3月　G6主催コピバンイベント開催予定<br>出演バンド募集中</p>
+        <p>● 2027.3月　G6主催コピバンイベント開催予定<br>@小岩オルフェウス<br>----出演バンド募集中----</p>
       </div>
     </div>
 
@@ -167,8 +166,8 @@
         </p>
 
         <p>
-          <a href="ライブ年表.html" class="link-past">
-            ▶ 過去ライブはこちら
+          <a href="live-history.html" class="link-past">
+            ▶ ライブヒストリーはこちら
           </a>
         </p>
       </div>
@@ -177,19 +176,20 @@
   </div>
 
   <div class="side-members" id="rightMembers">
-    <img src="images/トップページ/西岡.jpg">
-    <img src="images/トップページ/辻.jpg">
-    <img src="images/トップページ/秋元.jpg">
+    <img src="images/top/西岡.jpg">
+    <img src="images/top/辻.jpg">
+    <img src="images/top/秋元.jpg">
   </div>
 
 </div>
 
 <script>
-  const firstBlock = document.querySelector(".live-block");
-  const topPos = firstBlock.offsetTop;
-
-  document.getElementById("leftMembers").style.top = topPos + "px";
-  document.getElementById("rightMembers").style.top = topPos + "px";
+  window.onload = function() {
+    const firstBlock = document.querySelector(".live-block");
+    const topPos = firstBlock.offsetTop;
+    document.getElementById("leftMembers").style.top = topPos + "px";
+    document.getElementById("rightMembers").style.top = topPos + "px";
+  };
 </script>
 
 </body>
