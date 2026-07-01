@@ -26,11 +26,11 @@
     height: auto;
   }
 
-  /* ▼ PC用：左右3人ずつ */
+  /* ▼ PC用：左右3人ずつ（中央ブロックの外側に寄せる） */
   .main-layout {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 40px; /* ← あなたが調整した距離を維持 */
     margin-top: 20px;
     position: relative;
   }
@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: absolute; /* ← PCは絶対配置 */
+    position: relative; /* ← 端に寄らない。中央ブロックの外側に寄せる */
   }
 
   .side-members img {
@@ -84,42 +84,6 @@
     border-radius: 6px;
   }
 
-  .link-mail {
-    color: #3a7fcc;
-    font-weight: 600;
-    font-size: 20px;
-    text-decoration: underline;
-    text-shadow:
-      1px 1px 0 #fff,
-      -1px 1px 0 #fff,
-      1px -1px 0 #fff,
-      -1px -1px 0 #fff;
-  }
-
-  .link-youtube {
-    color: #cc3333;
-    font-weight: 600;
-    font-size: 20px;
-    text-decoration: underline;
-    text-shadow:
-      1px 1px 0 #fff,
-      -1px 1px 0 #fff,
-      1px -1px 0 #fff,
-      -1px -1px 0 #fff;
-  }
-
-  .link-past {
-    color: #4caf50;
-    font-weight: 600;
-    font-size: 20px;
-    text-decoration: underline;
-    text-shadow:
-      1px 1px 0 #fff,
-      -1px 1px 0 #fff,
-      1px -1px 0 #fff,
-      -1px -1px 0 #fff;
-  }
-
   /* ▼ PCではスマホ用ブロックを非表示 */
   .mobile-members {
     display: none;
@@ -128,13 +92,11 @@
   /* ▼ スマホ専用レイアウト（横並び6人） */
   @media (max-width: 768px) {
 
-    /* PCの左右メンバーを非表示 */
     #leftMembers,
     #rightMembers {
       display: none;
     }
 
-    /* スマホ用メンバー表示（中央ブロックと同じ幅） */
     .mobile-members {
       display: flex;
       width: 90%;
@@ -232,7 +194,7 @@
 </div>
 
 <script>
-  /* ▼ PC用：左右の画像位置を中央ブロックの上端に揃える（元の仕様） */
+  /* ▼ PC用：ズームしても中央ブロックの上端に揃える（あなたが調整したやつ） */
   window.onload = function() {
     const firstBlock = document.querySelector(".live-block");
     const topPos = firstBlock.offsetTop;
