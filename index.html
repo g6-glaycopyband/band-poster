@@ -91,32 +91,9 @@
   }
 
   /* ▼ 概要ブロックの文字色（白フチ） */
-  .link-mail {
-    color: #4da3ff;
-    font-weight: 600;
-    font-size: 20px;
-    text-decoration: underline;
-    text-shadow:
-      1px 1px 0 #fff,
-      -1px 1px 0 #fff,
-      1px -1px 0 #fff,
-      -1px -1px 0 #fff;
-  }
-
-  .link-youtube {
-    color: #ff0000;
-    font-weight: 600;
-    font-size: 20px;
-    text-decoration: underline;
-    text-shadow:
-      1px 1px 0 #fff,
-      -1px 1px 0 #fff,
-      1px -1px 0 #fff,
-      -1px -1px 0 #fff;
-  }
-
+  .link-mail,
+  .link-youtube,
   .link-past {
-    color: #4caf50;
     font-weight: 600;
     font-size: 20px;
     text-decoration: underline;
@@ -126,6 +103,9 @@
       1px -1px 0 #fff,
       -1px -1px 0 #fff;
   }
+  .link-mail { color: #4da3ff; }
+  .link-youtube { color: #ff0000; }
+  .link-past { color: #4caf50; }
 
   /* ▼ PCではスマホ用ブロックを非表示 */
   .mobile-members {
@@ -141,6 +121,7 @@
     }
 
     .mobile-members {
+      display: block;
       width: 90%;
       max-width: 900px;
       margin: 0 auto;
@@ -179,7 +160,7 @@
   <img src="images/top/title.png" alt="G6タイトルロゴ">
 </div>
 
-<!-- ▼ スマホ専用：3人 × 2段（並び順反映済み） -->
+<!-- ▼ スマホ専用：3人 × 2段（タイトルの直下に移動済み） -->
 <div class="mobile-members">
 
   <!-- 上段：山下 → 関口 → 西岡 -->
