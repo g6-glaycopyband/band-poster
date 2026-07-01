@@ -90,7 +90,7 @@
     border-radius: 6px;
   }
 
-  /* ▼ 概要ブロックの文字色（白フチ復元） */
+  /* ▼ 概要ブロックの文字色（白フチ） */
   .link-mail {
     color: #4da3ff;
     font-weight: 600;
@@ -132,7 +132,7 @@
     display: none;
   }
 
-  /* ▼ スマホ専用レイアウト（横並び6人） */
+  /* ▼ スマホ専用レイアウト（横並び6人）＋中央ブロック余白調整 */
   @media (max-width: 768px) {
 
     #leftMembers,
@@ -155,6 +155,11 @@
       min-width: 120px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+
+    /* ▼ スマホで中央ブロックの上余白を詰める（重要） */
+    .live-block {
+      margin-top: 20px;
     }
   }
 </style>
