@@ -231,7 +231,7 @@
 
 </div>
 
-<!-- ▼ アクセスカウンター（hits.sh 今日＋累計） -->
+<!-- ▼ アクセスカウンター（hits.sh 修正版） -->
 <div id="counter-box" style="
   font-size:22px;
   font-weight:700;
@@ -247,25 +247,31 @@
 </div>
 
 <script>
-// 今日の日付（例：2026-07-02）
+// 今日の日付
 const today = new Date().toISOString().split("T")[0];
 
-// 累計アクセス数（hits.sh）
-fetch("https://hits.sh/g6-copyband-total.svg?view=1")
+// 累計アクセス数（サイトURLをキーに）
+fetch("https://hits.sh/g6-glaycopyband.github.io/band-poster.svg?view=1")
   .then(res => res.text())
   .then(svg => {
     const match = svg.match(/>(\d+)</);
     document.getElementById("total-count").innerText =
       "累計アクセス数：" + (match ? match[1] : 0);
+  })
+  .catch(() => {
+    document.getElementById("total-count").innerText = "累計アクセス数：0";
   });
 
-// 今日のアクセス数（hits.sh）
-fetch(`https://hits.sh/g6-copyband-${today}.svg?view=1`)
+// 今日のアクセス数（URL＋日付をキーに）
+fetch(`https://hits.sh/g6-glaycopyband.github.io/band-poster-${today}.svg?view=1`)
   .then(res => res.text())
   .then(svg => {
     const match = svg.match(/>(\d+)</);
     document.getElementById("today-count").innerText =
       "今日のアクセス数：" + (match ? match[1] : 0);
+  })
+  .catch(() => {
+    document.getElementById("today-count").innerText = "今日のアクセス数：0";
   });
 
 window.onload = function() {
