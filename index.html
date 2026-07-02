@@ -231,7 +231,7 @@
 
 </div>
 
-<!-- ▼ アクセスカウンター（hits.sh 修正版） -->
+<!-- ▼ アクセスカウンター（CORS回避 hits.sh 安定版） -->
 <div id="counter-box" style="
   font-size:22px;
   font-weight:700;
@@ -241,39 +241,19 @@
   border-left:5px solid #4da3ff;
   border-radius:6px;
   width:fit-content;
+  text-align:center;
 ">
-  <div id="today-count">今日のアクセス数：読み込み中…</div>
-  <div id="total-count">累計アクセス数：読み込み中…</div>
+  <div>
+    今日のアクセス数：
+    <img src="https://hits.sh/g6-glaycopyband.github.io/band-poster-2026-07-02.svg?label=&color=4da3ff" alt="today hits" style="vertical-align:middle;">
+  </div>
+  <div>
+    累計アクセス数：
+    <img src="https://hits.sh/g6-glaycopyband.github.io/band-poster.svg?label=&color=4da3ff" alt="total hits" style="vertical-align:middle;">
+  </div>
 </div>
 
 <script>
-// 今日の日付
-const today = new Date().toISOString().split("T")[0];
-
-// 累計アクセス数（サイトURLをキーに）
-fetch("https://hits.sh/g6-glaycopyband.github.io/band-poster.svg?view=1")
-  .then(res => res.text())
-  .then(svg => {
-    const match = svg.match(/>(\d+)</);
-    document.getElementById("total-count").innerText =
-      "累計アクセス数：" + (match ? match[1] : 0);
-  })
-  .catch(() => {
-    document.getElementById("total-count").innerText = "累計アクセス数：0";
-  });
-
-// 今日のアクセス数（URL＋日付をキーに）
-fetch(`https://hits.sh/g6-glaycopyband.github.io/band-poster-${today}.svg?view=1`)
-  .then(res => res.text())
-  .then(svg => {
-    const match = svg.match(/>(\d+)</);
-    document.getElementById("today-count").innerText =
-      "今日のアクセス数：" + (match ? match[1] : 0);
-  })
-  .catch(() => {
-    document.getElementById("today-count").innerText = "今日のアクセス数：0";
-  });
-
 window.onload = function() {
   const firstBlock = document.querySelector(".live-block");
   const topPos = firstBlock.offsetTop;
