@@ -34,7 +34,6 @@
     height: auto;
   }
 
-  /* ▼ PC用：中央ブロックの外側に寄せる */
   .main-layout {
     position: relative;
     width: 90%;
@@ -98,7 +97,6 @@
     border-radius: 6px;
   }
 
-  /* ▼ 概要ブロックの文字色（白フチ） */
   .link-mail,
   .link-youtube,
   .link-past {
@@ -115,12 +113,10 @@
   .link-youtube { color: #ff0000; }
   .link-past { color: #4caf50; }
 
-  /* ▼ PCではスマホ用ブロックを非表示 */
   .mobile-members {
     display: none;
   }
 
-  /* ▼ スマホ専用レイアウト（3人 × 2段）＋中央ブロック幅調整 */
   @media (max-width: 768px) {
 
     #leftMembers,
@@ -168,35 +164,28 @@
   <img src="images/top/title.png" alt="G6タイトルロゴ">
 </div>
 
-<!-- ▼ スマホ専用：3人 × 2段（タイトルの直下に移動済み） -->
 <div class="mobile-members">
-
-  <!-- 上段：山下 → 関口 → 西岡 -->
   <div class="row">
     <img src="images/top/yamashita.jpg">
     <img src="images/top/sekiguchi.jpg">
     <img src="images/top/nishioka.jpg">
   </div>
 
-  <!-- 下段：和也 → 秋元 → 辻 -->
   <div class="row">
     <img src="images/top/kazuya.jpg">
     <img src="images/top/akimoto.jpg">
     <img src="images/top/tsuji.jpg">
   </div>
-
 </div>
 
 <div class="main-layout">
 
-  <!-- 左側（PC用） -->
   <div class="side-members" id="leftMembers">
     <img src="images/top/sekiguchi.jpg">
     <img src="images/top/yamashita.jpg">
     <img src="images/top/kazuya.jpg">
   </div>
 
-  <!-- 中央 -->
   <div class="content-wrapper">
     <div class="live-block">
       <div class="live-item">
@@ -234,7 +223,6 @@
     </div>
   </div>
 
-  <!-- 右側（PC用） -->
   <div class="side-members" id="rightMembers">
     <img src="images/top/nishioka.jpg">
     <img src="images/top/tsuji.jpg">
@@ -243,13 +231,47 @@
 
 </div>
 
+<!-- ▼ アクセスカウンター（今日＋累計） -->
+<div id="counter-box" style="
+  font-size:22px;
+  font-weight:700;
+  margin:40px auto;
+  padding:12px 18px;
+  background:rgba(0,0,0,0.6);
+  border-left:5px solid #4da3ff;
+  border-radius:6px;
+  width:fit-content;
+">
+  <div id="today-count">今日のアクセス数：読み込み中…</div>
+  <div id="total-count">累計アクセス数：読み込み中…</div>
+</div>
+
 <script>
-  window.onload = function() {
-    const firstBlock = document.querySelector(".live-block");
-    const topPos = firstBlock.offsetTop;
-    document.getElementById("leftMembers").style.top = topPos + "px";
-    document.getElementById("rightMembers").style.top = topPos + "px";
-  };
+// 今日の日付（例：2026-07-02）
+const today = new Date().toISOString().split("T")[0];
+
+// 今日のアクセス数（キー：g6-copyband-today-2026-07-02）
+fetch(`https://api.countapi.xyz/hit/g6-copyband-today-${today}/visits`)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("today-count").innerText =
+      "今日のアクセス数：" + data.value;
+  });
+
+// 累計アクセス数（キー：g6-copyband-total）
+fetch("https://api.countapi.xyz/hit/g6-copyband-total/visits")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("total-count").innerText =
+      "累計アクセス数：" + data.value;
+  });
+
+window.onload = function() {
+  const firstBlock = document.querySelector(".live-block");
+  const topPos = firstBlock.offsetTop;
+  document.getElementById("leftMembers").style.top = topPos + "px";
+  document.getElementById("rightMembers").style.top = topPos + "px";
+};
 </script>
 
 </body>
