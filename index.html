@@ -13,7 +13,7 @@
 <!-- ▼ 新しいタイトル（SEO最適化済み） -->
 <title>G6｜ジーシックス｜GLAYコピーバンド｜ライブ動画・YouTube</title>
 
-<!-- ▼ favicon設定（32 / 180 に修正済み） -->
+<!-- ▼ favicon設定 -->
 <link rel="icon" href="images/top/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="images/top/favicon-180.png" sizes="180x180">
 
@@ -30,6 +30,9 @@
 <meta name="twitter:title" content="G6｜ジーシックス｜GLAYコピーバンド｜ライブ動画・YouTube">
 <meta name="twitter:description" content="G6（ジーシックス）は小岩を拠点に活動するGLAYのコピーバンド。ライブ動画をYouTubeで公開し、活動情報や最新ライブ告知を掲載しています。">
 <meta name="twitter:image" content="https://g6-glaycopyband.github.io/band-poster/images/top/ogp.jpg">
+
+<!-- ▼ Counter.dev（累計が絶対にリセットされない） -->
+<script src="https://counter.dev/js/counter.js" data-id="g6-glaycopyband-band-poster"></script>
 
 <style>
   body {
@@ -249,7 +252,7 @@
 
 </div>
 
-<!-- ▼ アクセスカウンター -->
+<!-- ▼ アクセスカウンター（今日＋累計） -->
 <div id="counter-box" style="
   font-size:22px;
   font-weight:700;
@@ -261,17 +264,23 @@
   width:fit-content;
   text-align:center;
 ">
-  <div>
-    今日のアクセス数：
-    <img src="https://hits.sh/g6-glaycopyband.github.io/band-poster-2026-07-02.svg?label=&color=4da3ff" alt="today hits" style="vertical-align:middle;">
-  </div>
-  <div>
-    累計アクセス数：
-    <img src="https://hits.sh/g6-glaycopyband.github.io/band-poster.svg?label=&color=4da3ff" alt="total hits" style="vertical-align:middle;">
-  </div>
+  <div id="counter-today">今日のアクセス数：読み込み中…</div>
+  <div id="counter-total">累計アクセス数：読み込み中…</div>
 </div>
 
 <script>
+async function loadCounter() {
+  const res = await fetch("https://counter.dev/track/g6-glaycopyband-band-poster.json");
+  const data = await res.json();
+
+  document.getElementById("counter-today").innerText =
+    "今日のアクセス数：" + data.today;
+
+  document.getElementById("counter-total").innerText =
+    "累計アクセス数：" + data.count;
+}
+loadCounter();
+
 window.onload = function() {
   const firstBlock = document.querySelector(".live-block");
   const topPos = firstBlock.offsetTop;
