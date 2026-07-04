@@ -25,15 +25,6 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="G6 Official Site">
 
-<!-- ▼ Twitterカード設定 -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="G6｜ジーシックス｜GLAYコピーバンド｜ライブ動画・YouTube">
-<meta name="twitter:description" content="G6（ジーシックス）は小岩を拠点に活動するGLAYのコピーバンド。ライブ動画をYouTubeで公開し、活動情報や最新ライブ告知を掲載しています。">
-<meta name="twitter:image" content="https://g6-glaycopyband.github.io/band-poster/images/top/ogp.jpg">
-
-<!-- ▼ Counter.dev（新しい正式版） -->
-<script src="https://cdn.counter.dev/script.js" data-id="g6glay"></script>
-
 <style>
   body {
     background: url("images/top/background.jpeg") no-repeat center center fixed;
@@ -251,35 +242,9 @@
 
 </div>
 
-<!-- ▼ アクセスカウンター（今日＋累計） -->
-<div id="counter-box" style="
-  font-size:22px;
-  font-weight:700;
-  margin:40px auto;
-  padding:12px 18px;
-  background:rgba(0,0,0,0.6);
-  border-left:5px solid #4da3ff;
-  border-radius:6px;
-  width:fit-content;
-  text-align:center;
-">
-  <div id="counter-today">今日のアクセス数：読み込み中…</div>
-  <div id="counter-total">累計アクセス数：読み込み中…</div>
-</div>
+<!-- ▼ カウンター削除済み（ここに新しいカウンターを入れる） -->
 
 <script>
-async function loadCounter() {
-  const res = await fetch("https://counter.dev/track/g6glay.json");
-  const data = await res.json();
-
-  document.getElementById("counter-today").innerText =
-    "今日のアクセス数：" + data.today;
-
-  document.getElementById("counter-total").innerText =
-    "累計アクセス数：" + data.count;
-}
-loadCounter();
-
 window.onload = function() {
   const firstBlock = document.querySelector(".live-block");
   const topPos = firstBlock.offsetTop;
@@ -287,21 +252,6 @@ window.onload = function() {
   document.getElementById("rightMembers").style.top = topPos + "px";
 };
 </script>
-
-<!-- ▼ Statcounter（本格アクセス解析） -->
-<!-- Default Statcounter code for G6 Official Site -->
-<script type="text/javascript">
-var sc_project=13334551; 
-var sc_invisible=1; 
-var sc_security="fc14dd43"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js" async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/13334551/0/fc14dd43/1/" alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
 
 </body>
 </html>
