@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>G6 過去ライブ年表</title>
 
+<!-- ▼ Counter.dev（累計が絶対にリセットされない） -->
+<script src="https://counter.dev/js/counter.js" data-id="g6-glaycopyband-band-poster"></script>
+
 <style>
 body {
   background:#111;
@@ -60,8 +63,8 @@ header img {
 /* ▼ トップページに戻るリンク（20pxに変更＋下に余白追加） */
 .top-link {
   text-align:center;
-  margin:20px 0 40px 0; /* ← 下に40pxの余白を追加 */
-  font-size:20px;       /* ← 18px → 20px に変更 */
+  margin:20px 0 40px 0;
+  font-size:20px;
 }
 
 /* 上へ戻るボタン */
@@ -83,6 +86,19 @@ header img {
 }
 #scrollTopBtn:hover {
   background-color:#1e90ff;
+}
+
+/* ▼ アクセスカウンター枠 */
+#counter-box {
+  font-size:22px;
+  font-weight:700;
+  margin:40px auto;
+  padding:12px 18px;
+  background:rgba(0,0,0,0.6);
+  border-left:5px solid #4da3ff;
+  border-radius:6px;
+  width:fit-content;
+  text-align:center;
 }
 </style>
 </head>
@@ -140,9 +156,27 @@ header img {
   </a>
 </div>
 
+<!-- ▼ アクセスカウンター（今日＋累計） -->
+<div id="counter-box">
+  <div id="counter-today">今日のアクセス数：読み込み中…</div>
+  <div id="counter-total">累計アクセス数：読み込み中…</div>
+</div>
+
 <button onclick="scrollToTop()" id="scrollTopBtn">▲ 上へ戻る</button>
 
 <script>
+async function loadCounter() {
+  const res = await fetch("https://counter.dev/track/g6-glaycopyband-band-poster.json");
+  const data = await res.json();
+
+  document.getElementById("counter-today").innerText =
+    "今日のアクセス数：" + data.today;
+
+  document.getElementById("counter-total").innerText =
+    "累計アクセス数：" + data.count;
+}
+loadCounter();
+
 window.onscroll = function() {
   const btn = document.getElementById("scrollTopBtn");
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
